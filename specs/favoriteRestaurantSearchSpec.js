@@ -90,7 +90,7 @@ describe('Searching restaurants', () => {
     });
     it('should show all favorite restaurants', () => {
       searchRestaurants('    ');
-      expect(favoriteRestaurants.getAllRestaurants)
+      expect(favoriteRestaurants.getAllRestaurant)
         .toHaveBeenCalled();
     });
   });

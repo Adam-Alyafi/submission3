@@ -19,7 +19,7 @@ describe('Showing all favorite restaurants', () => {
         view,
         favoriteRestaurants,
       });
-      expect(favoriteRestaurants.getAllRestaurants).toHaveBeenCalledTimes(1);
+      expect(favoriteRestaurants.getAllRestaurant).toHaveBeenCalledTimes(1);
     });
     it('should show the information that no restaurants have been liked', (done) => {
       document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
@@ -28,7 +28,7 @@ describe('Showing all favorite restaurants', () => {
         done();
       });
       const favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurantIdb);
-      favoriteRestaurants.getAllRestaurants.and.returnValues([]);
+      favoriteRestaurants.getAllRestaurant.and.returnValues([]);
       new FavoriteRestaurantShowPresenter({
         view,
         favoriteRestaurants,
@@ -42,7 +42,7 @@ describe('Showing all favorite restaurants', () => {
         done();
       });
       const favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurantIdb);
-      favoriteRestaurants.getAllRestaurants.and.returnValues([
+      favoriteRestaurants.getAllRestaurant.and.returnValues([
         {
           id: 11, name: 'A', description: 'Tempat restoran A',
         },
